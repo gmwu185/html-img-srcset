@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>imgBG: -webkit-min-device-pixel-ratio</title>
+  <style>
+    html, body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    /*非Retina螢幕顯示此段樣式*/
+    /*
+      * 資料來源：
+      * http://imulus.github.io/retinajs/
+      * https://www.minwt.com/webdesign-dev/css/17070.html
+    */
+    .imgBox {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      /* max-width: 1000px; */
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 1000px auto;
+      background-repeat: no-repeat;
+      background-image: url(img/imgSrcset-1.jpg);
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.0), 
+    only screen and (min-resolution: 2.0dppx), 
+    (-webkit-min-device-pixel-ratio: 2.0), 
+    (min-resolution: 144dpi){ 
+      .imgBox{ 
+        background-image: url(img/imgSrcset-1@2x.jpg);　
+        /*_2x的實際圖片尺寸為1000px×1000px*/ 
+      } 
+    }
+  </style>
+</head>
+<body>
+  <div class="imgBox"></div>
+</body>
+</html>
